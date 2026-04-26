@@ -220,16 +220,15 @@
   .jeevika-photos img { width: 100%; height: 340px; object-fit: cover; border-radius: 6px; background: var(--color-blush-light); }
 
   /* ═══ RESEARCH OUTPUTS ═══ */
-.research-carousel {
-  position: relative; margin-top: 60px; overflow: hidden;
-}
-.research-track {
-  display: flex; gap: 36px;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+.research { background: var(--color-cream); }
+.research-carousel-wrapper { position: relative; margin-top: 60px; overflow: hidden; }
+.research-grid {
+  display: flex; transition: transform 0.5s ease;
+  gap: 36px;
 }
 .research-card {
-  min-width: calc((100% - 72px) / 3); text-align: center;
-  transition: transform 0.3s; flex-shrink: 0;
+  min-width: calc(33.333% - 24px); text-align: center; flex-shrink: 0;
+  transition: transform 0.3s;
 }
 .research-card:hover { transform: translateY(-4px); }
 .research-card a { text-decoration: none; }
@@ -247,24 +246,27 @@
   text-decoration-color: rgba(128, 0, 25, 0.3); transition: text-decoration-color 0.3s;
 }
 .research-card:hover .research-title { text-decoration-color: var(--color-deep); }
-.carousel-controls {
+
+.carousel-arrows {
   display: flex; justify-content: center; gap: 16px; margin-top: 40px;
 }
 .carousel-btn {
   width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--color-blush-light);
   background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: all 0.3s; font-size: 1.2rem; color: var(--color-crimson);
+  transition: all 0.3s; color: var(--color-crimson);
 }
-.carousel-btn:hover { border-color: var(--color-crimson); background: var(--color-blush-lightest); }
+.carousel-btn:hover { border-color: var(--color-crimson); background: var(--color-crimson); color: #fff; }
 .carousel-btn:disabled { opacity: 0.3; cursor: default; }
+.carousel-btn:disabled:hover { border-color: var(--color-blush-light); background: #fff; color: var(--color-crimson); }
+
 .carousel-dots {
-  display: flex; align-items: center; gap: 8px;
+  display: flex; justify-content: center; gap: 8px; margin-top: 20px;
 }
 .carousel-dot {
-  width: 10px; height: 10px; border-radius: 50%; background: var(--color-blush-light);
-  border: none; cursor: pointer; transition: all 0.3s;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--color-blush-light);
+  border: none; cursor: pointer; transition: all 0.3s; padding: 0;
 }
-.carousel-dot.active { background: var(--color-crimson); width: 28px; border-radius: 5px; }
+.carousel-dot.active { background: var(--color-crimson); width: 24px; border-radius: 4px; }
 
   /* ═══ TEAM ═══ */
   .team { background: var(--color-blush-lightest); position: relative; }
@@ -374,7 +376,7 @@
     .hero-circle { width: 300px; height: 300px; margin: 0 auto; }
     .jeevika-photos { grid-template-columns: 1fr; }
     .jeevika-photos img { height: 260px; }
-    .research-grid { grid-template-columns: 1fr 1fr; }
+    .research-card { min-width: calc(50% - 18px); }
     .team-grid, .team-grid-row-2 { grid-template-columns: repeat(2, 1fr); gap: 32px; }
     .facts-grid { grid-template-columns: 1fr; }
     .fact-item:not(:last-child)::after { display: none; }
@@ -390,7 +392,7 @@
     .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
     .hero-cta { flex-direction: column; }
     .btn { justify-content: center; }
-    .research-grid { grid-template-columns: 1fr; max-width: 400px; margin: 60px auto 0; }
+    .research-card { min-width: 100%; }
     .team-grid, .team-grid-row-2 { grid-template-columns: 1fr 1fr; gap: 24px; }
     .partner-logos { flex-direction: column; gap: 16px; }
     .work-card { padding: 36px 28px; }
@@ -504,20 +506,24 @@
   <div class="section-inner">
     <div class="section-label reveal" style="text-align:center;">Research</div>
     <h2 class="section-heading reveal" style="max-width:100%;text-align:center;">Research &amp; Outputs</h2>
-    <div class="research-carousel reveal">
-      <div class="research-grid">
-      <div class="research-card reveal"><a href="research-jeevika-work.html"><div class="research-thumb"><img src="images/research-jeevika.png" alt="Current Work with JEEViKA"></div><div class="research-title">Current Work with JEEViKA</div></a></div>
-      <div class="research-card reveal"><a href="research-naljal.html"><div class="research-thumb"><img src="images/research-naljal.png" alt="Nal Jal Implementation"></div><div class="research-title">Research Output – Nal Jal Implementation</div></a></div>
-      <div class="research-card reveal"><a href="research-political.html"><div class="research-thumb"><img src="images/research-political.png" alt="JEEViKA and Political Participation"></div><div class="research-title">Research Output – JEEViKA and Political Participation</div></a></div>
-      <div class="research-card reveal"><a href="research-reserved-seats.html"><div class="research-thumb"><img src="images/research-reserved-seats.png" alt="Reserved Seats Delivery"></div><div class="research-title">Research Output – Reserved Seats Delivery</div></a></div>
-      <div class="research-card reveal"><a href="research-peer-learning.html"><div class="research-thumb"><img src="images/research-peer-learning.png" alt="Peer Learning among Local Politicians"></div><div class="research-title">Research Output – Peer Learning among Local Politicians</div></a></div>
-      <div class="research-card reveal"><a href="research-jeevika-sc.html"><div class="research-thumb"><img src="images/research-jeevika-sc.png" alt="JEEViKA Reach among SC Women"></div><div class="research-title">Research Output – JEEViKA Reach among SC Women</div></a></div>
-    </div>
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="prevBtn" onclick="moveCarousel(-1)">←</button>
-        <div class="carousel-dots" id="carouselDots"></div>
-        <button class="carousel-btn" id="nextBtn" onclick="moveCarousel(1)">→</button>
+    <div class="research-carousel-wrapper reveal">
+      <div class="research-grid" id="researchGrid">
+        <div class="research-card"><a href="research-jeevika-work.html"><div class="research-thumb"><img src="images/research-jeevika.png" alt="Current Work with JEEViKA"></div><div class="research-title">Current Work with JEEViKA</div></a></div>
+        <div class="research-card"><a href="research-naljal.html"><div class="research-thumb"><img src="images/research-naljal.png" alt="Nal Jal Implementation"></div><div class="research-title">Research Output – Nal Jal Implementation</div></a></div>
+        <div class="research-card"><a href="research-political.html"><div class="research-thumb"><img src="images/research-political.png" alt="JEEViKA and Political Participation"></div><div class="research-title">Research Output – JEEViKA and Political Participation</div></a></div>
+        <div class="research-card"><a href="research-reserved-seats.html"><div class="research-thumb"><img src="images/research-reserved-seats.png" alt="Reserved Seats Delivery"></div><div class="research-title">Research Output – Reserved Seats Delivery</div></a></div>
+        <div class="research-card"><a href="research-peer-learning.html"><div class="research-thumb"><img src="images/research-peer-learning.png" alt="Peer Learning among Local Politicians"></div><div class="research-title">Research Output – Peer Learning among Local Politicians</div></a></div>
+        <div class="research-card"><a href="research-jeevika-sc.html"><div class="research-thumb"><img src="images/research-jeevika-sc.png" alt="JEEViKA Reach among SC Women"></div><div class="research-title">Research Output – JEEViKA Reach among SC Women</div></a></div>
       </div>
+      <div class="carousel-arrows">
+        <button class="carousel-btn" id="carouselPrev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-btn" id="carouselNext" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
   </div>
 </section>
@@ -677,6 +683,62 @@ setInterval(() => {
 
 window.addEventListener('resize', () => { currentSlide = 0; updateCarousel(); });
 updateCarousel();
+  // Research carousel
+(function() {
+  const grid = document.getElementById('researchGrid');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const dotsContainer = document.getElementById('carouselDots');
+  if (!grid) return;
+
+  let currentPage = 0;
+
+  function getCardsPerPage() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  function getTotalPages() {
+    const cards = grid.children.length;
+    return Math.ceil(cards / getCardsPerPage());
+  }
+
+  function updateCarousel() {
+    const cardsPerPage = getCardsPerPage();
+    const cardEl = grid.children[0];
+    const gap = 36;
+    const cardWidth = cardEl.offsetWidth + gap;
+    const offset = currentPage * cardsPerPage * cardWidth;
+    grid.style.transform = 'translateX(-' + offset + 'px)';
+
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = currentPage >= getTotalPages() - 1;
+
+    // Update dots
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < getTotalPages(); i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === currentPage ? ' active' : '');
+      dot.setAttribute('aria-label', 'Page ' + (i + 1));
+      dot.addEventListener('click', function() { currentPage = i; updateCarousel(); });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  prevBtn.addEventListener('click', function() {
+    if (currentPage > 0) { currentPage--; updateCarousel(); }
+  });
+
+  nextBtn.addEventListener('click', function() {
+    if (currentPage < getTotalPages() - 1) { currentPage++; updateCarousel(); }
+  });
+
+  window.addEventListener('resize', function() { currentPage = 0; updateCarousel(); });
+
+  // Initialize
+  updateCarousel();
+})();
 </script>
 </body>
 </html>
