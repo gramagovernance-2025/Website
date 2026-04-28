@@ -185,7 +185,15 @@
     line-height: 1.7; color: rgba(255,255,255,0.9);
     border-left: 3px solid var(--color-berry); padding-left: 28px; margin-top: 40px;
   }
-
+  
+  /* ═══ VISION ═══ */
+  .vision { background: var(--color-blush-lightest); text-align: center; position: relative; overflow: hidden; }
+  .vision::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; border-radius: 50%; border: 1px solid rgba(128, 0, 25, 0.04); pointer-events: none; }
+  .vision::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; border-radius: 50%; border: 1px solid rgba(128, 0, 25, 0.02); pointer-events: none; }
+  .vision .section-inner { max-width: 780px; position: relative; z-index: 2; }
+  .vision-text { font-family: var(--font-serif); font-size: clamp(1.3rem, 2.5vw, 1.65rem); font-weight: 300; line-height: 1.75; color: var(--color-ink); margin-top: 28px; }
+  .vision-text em { font-style: italic; color: var(--color-deep); font-weight: 400; }
+  
   /* ═══ WHAT WE DO ═══ */
   .what-we-do { background: var(--color-cream); }
   .work-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
@@ -291,14 +299,6 @@
   .fact-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 25%; height: 50%; width: 1px; background: rgba(255,255,255,0.15); }
   .fact-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-blush-light); margin-bottom: 12px; }
   .fact-value { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400; color: #fff; line-height: 1.5; }
-
-  /* ═══ VISION ═══ */
-  .vision { background: var(--color-blush-lightest); text-align: center; position: relative; overflow: hidden; }
-  .vision::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; border-radius: 50%; border: 1px solid rgba(128, 0, 25, 0.04); pointer-events: none; }
-  .vision::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; border-radius: 50%; border: 1px solid rgba(128, 0, 25, 0.02); pointer-events: none; }
-  .vision .section-inner { max-width: 780px; position: relative; z-index: 2; }
-  .vision-text { font-family: var(--font-serif); font-size: clamp(1.3rem, 2.5vw, 1.65rem); font-weight: 300; line-height: 1.75; color: var(--color-ink); margin-top: 28px; }
-  .vision-text em { font-style: italic; color: var(--color-deep); font-weight: 400; }
 
   /* ═══ SUPPORTED ═══ */
   .supported { background: var(--color-cream); text-align: center; }
@@ -461,6 +461,15 @@
   </div>
 </section>
 
+  <!-- VISION -->
+<section class="vision" id="vision">
+  <div class="section-inner">
+    <div class="section-label reveal">Our Vision</div>
+    <h2 class="section-heading reveal" style="max-width:100%;text-align:center;">A governance shaped by those closest to it</h2>
+    <p class="vision-text reveal">We envision governance that is shaped by those closest to it — where research, data, and advocacy come together to ensure that the <em>voices of those furthest from power</em> are not just heard, but acted upon.</p>
+  </div>
+</section>
+
 <!-- WHAT WE DO -->
 <section class="what-we-do" id="work">
   <div class="section-inner">
@@ -554,15 +563,6 @@
     <div class="fact-item reveal"><div class="fact-label">Based In</div><div class="fact-value">Patna, Bihar</div></div>
     <div class="fact-item reveal"><div class="fact-label">Established</div><div class="fact-value">Founded in 2024</div></div>
     <div class="fact-item reveal"><div class="fact-label">Supported By</div><div class="fact-value">Bill &amp; Melinda Gates Foundation via University of Maryland</div></div>
-  </div>
-</section>
-
-<!-- VISION -->
-<section class="vision" id="vision">
-  <div class="section-inner">
-    <div class="section-label reveal">Our Vision</div>
-    <h2 class="section-heading reveal" style="max-width:100%;text-align:center;">A governance shaped by those closest to it</h2>
-    <p class="vision-text reveal">We envision governance that is shaped by those closest to it — where research, data, and advocacy come together to ensure that the <em>voices of those furthest from power</em> are not just heard, but acted upon.</p>
   </div>
 </section>
 
